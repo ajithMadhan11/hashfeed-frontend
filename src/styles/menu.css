@@ -72,16 +72,16 @@
     float: right;
     font-size: 18px;
   }
-  
-  .nav > .nav-links > a {
+
+  .nav > .nav-links > li {
     display: inline-block;
     padding: 13px 10px 13px 10px;
     text-decoration: none;
-    /* color: black; */
+    color: black;
     background-color: #ffffff;
   }
   
-  .nav > .nav-links > a:hover {
+  .nav > .nav-links > li:hover {
     color: #4A89DC;
     cursor: pointer;
   }
@@ -135,15 +135,20 @@
       top: 50px;
       left: 0px;
     }
-    .nav > .nav-links > a {
+    .nav > .nav-links > li {
       display: block;
       width: 100%;
+    
     }
+   
     .nav > #nav-check:not(:checked) ~ .nav-links {
       height: 0px;
+   
     }
     .nav > #nav-check:checked ~ .nav-links {
+     
       height: calc(100vh - 50px);
       overflow-y: auto;
     }
+   
   }

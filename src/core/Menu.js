@@ -1,23 +1,37 @@
 import React from 'react';
 import '../styles/menu.css'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { withRouter ,Link} from 'react-router-dom';
 library.add(fab)
 // #4A89DC  primary color
 
-const Menu = () => {
+const currenttab=(history,path)=>{
+  if (history.location.pathname === path) {
+    return { color: "#4A89DC",textDecoration: 'none' ,backgroundColor:"#ffffff" };
+  } else {
+    return { color: "black",textDecoration: 'none' ,backgroundColor:"#ffffff" };
+  }
+}
+
+const Menu = ({history}) => {
     return (
         <div className="nav nav-row">
         <input type="checkbox" id="nav-check"/>
        
         
-        <div className="nav-links nav-col" >
+        <div className="nav-links nav-col nav-col-alt" >
          
-          <a target="_blank">Home</a>
-          <a target="_blank">Dashboard</a>
-          <a target="_blank">Logout</a>
+          <li><Link style={currenttab(history,'/')} to='/'> 
+          Home
+          </Link></li>
+          <li><Link style={currenttab(history,'/dashboard')} to='/dashboard'> 
+          Dashboard
+          </Link></li>
+          <li><Link style={currenttab(history,'/signin')} to='/signin'> 
+          Signin
+          </Link></li>
         </div>
 
         <div className="nav-header nav-col">
@@ -47,5 +61,5 @@ const Menu = () => {
     );
 }
 
-export default Menu;
+export default withRouter(Menu);
 
