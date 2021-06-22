@@ -14,7 +14,8 @@ import Card from '../components/Card';
 const Home = () => {
     
     return (
-       
+       <div>
+            <Menu/>
             <div className="container">
             <Splide
 				options={ {
@@ -49,6 +50,7 @@ const Home = () => {
 </Splide>
             </div>
            
+       </div>
        
     );
 }
