@@ -4,6 +4,8 @@ import './App.css';
 import Menu from './core/Menu';
 import Home from './core/Home';
 import Loader from './components/Loader';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
 
       
     }
-    
+    <NotificationContainer/>
     </div>
   );
 }

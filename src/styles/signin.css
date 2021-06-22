@@ -1,3 +1,4 @@
+
 .signin_wrapper{
     
     display: flex;
@@ -63,6 +64,10 @@
    color: #ffffff;
    border-radius: 10px;
    width: 120px;
+}
+.signin_btn:hover{
+    cursor: pointer;
+    background-color: #265ca1;
 }
 hr{
     
