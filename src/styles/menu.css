@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 * {
     box-sizing: border-box;
+   
   }
   .logo{
     font-family: 'Pacifico', cursive;
@@ -18,6 +19,7 @@
     float: left;
     width: 33.33%;
     padding: 10px;
+    z-index: 2;
    
   }
  

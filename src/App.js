@@ -17,13 +17,9 @@ function App() {
   return (
     <div className="App">
     {
-      
       loading?  <Loader loading={loading}/>
       :
       <Home/>
- 
-
-      
     }
     <NotificationContainer/>
     </div>

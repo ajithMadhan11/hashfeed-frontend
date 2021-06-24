@@ -5,8 +5,12 @@ import '../styles/signin.css'
 import { authenticate, isAutheticated, signin } from '../auth/authhelpercalls';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/userSlice';
 
 const Signin = () => {
+
+    const dispatch=useDispatch();
 
 const [state, setstate] = useState({
     email:'a@hashfeed.com',
@@ -41,10 +45,15 @@ const {email,password,error,isRedirected}=state;
                 authenticate(data ,()=>{
                     setstate({...state,isRedirected:true})
                 })
+                dispatch(login({data}))
+                
                 const m_name=data.name;
                 notification('success',m_name);
             }
         }))
+        .catch((err)=>{
+            alert("error")
+        })
     }
 
     const signInForm=()=>{
@@ -82,7 +91,7 @@ const {email,password,error,isRedirected}=state;
     return (
   
        <Fragment>
-         
+         <Menu/>
            {signInForm()}
             {redirectTo()}
 

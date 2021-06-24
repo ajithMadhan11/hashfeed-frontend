@@ -1,8 +1,11 @@
 import React from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import App from './App';
+import PrivateRoutes from './auth/PrivateRoutes';
+import ServerError from './components/ServerError';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
+import Dashboard from './components/UserDashboard/Dashboard';
 import Home from './core/Home';
 
 const Routes = () => {
@@ -12,6 +15,11 @@ const Routes = () => {
             <Route path='/' exact component={App}/>
             <Route path='/signin' exact component={Signin}/>
             <Route path='/signup' exact component={Signup}/>
+            <Route path='/servererr' exact component={ServerError}/>
+            <PrivateRoutes path='/user/dashboard' exact component={Dashboard}/>
+            
+           
+
         </Switch>
         </BrowserRouter>
     );

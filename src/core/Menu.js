@@ -4,7 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { withRouter ,Link} from 'react-router-dom';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
+import { isAutheticated ,signout } from '../auth/authhelpercalls';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUsers } from '../redux/userSlice';
 library.add(fab)
+
+
 // #4A89DC  primary color
 
 const currenttab=(history,path)=>{
@@ -16,22 +23,48 @@ const currenttab=(history,path)=>{
 }
 
 const Menu = ({history}) => {
+
+  const notification=(mode,field)=>{
+    if(mode == 'error'){
+        return  NotificationManager.error(field);
+    }
+    else if(mode== 'success'){
+        return  NotificationManager.success(field+' 🙌');
+    }
+}
+  const user =useSelector(selectUsers);
+  console.log(user);
+  const dispatch=useDispatch();
     return (
         <div className="nav nav-row">
         <input type="checkbox" id="nav-check"/>
-       
-        
         <div className="nav-links nav-col nav-col-alt" >
-         
           <li><Link style={currenttab(history,'/')} to='/'> 
           Home
           </Link></li>
-          <li><Link style={currenttab(history,'/dashboard')} to='/dashboard'> 
+          <li><Link style={currenttab(history,'/user/dashboard')} to='/user/dashboard'> 
           Dashboard
-          </Link></li>
-          <li><Link style={currenttab(history,'/signin')} to='/signin'> 
-          Signin
-          </Link></li>
+          </Link> </li>
+
+          {
+            user!=null?
+            <li onClick={
+           ()=>{
+             signout(()=>{
+               dispatch(logout())
+               notification('success',"See you soon!")
+             })
+           }
+            }>
+            Logout
+            </li> 
+            :<li>
+            <Link style={currenttab(history,'/signin')} to='/signin'> 
+            Signin
+            </Link>
+            </li>
+          }
+
         </div>
 
         <div className="nav-header nav-col">
@@ -56,6 +89,7 @@ const Menu = ({history}) => {
             <span></span>
           </label>
         </div>
+        <NotificationContainer/>
       </div>
      
     );

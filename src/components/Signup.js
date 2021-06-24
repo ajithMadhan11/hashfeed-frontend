@@ -33,9 +33,7 @@ signup({name,email,phone_number,password}).then((data)=>{
         return  setstate({...state,error:data.error,loading:false})
          
     }else{
-        authenticate(data ,()=>{
-            setstate({...state,isRedirected:true})
-        })
+        setstate({...state,isRedirected:true})
         const m_name=data.name;
         notification('success',m_name);
     }
@@ -43,7 +41,7 @@ signup({name,email,phone_number,password}).then((data)=>{
 
 }
 const redirectTo=()=>{
-    return isRedirected && <Redirect to="/" />;
+    return isRedirected && <Redirect to="/signin" />;
 }
 
 const notification=(mode,field)=>{
@@ -76,6 +74,7 @@ const signupForm =()=>{
     return (
    
      <Fragment>
+         <Menu/>
          {signupForm()}
          {redirectTo()}
          <NotificationContainer/>
