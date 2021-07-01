@@ -44,12 +44,13 @@ export const getCategories = () => {
   return photo;
   }
 
-  export const  getuniqueCategory =async(id)=>{
-    return await fetch(`${API}/category/${id}`,{
+  export const  getuniqueCategory =(id)=>{
+    return  fetch(`${API}/category/${id}`,{
       method:'GET'
     })
-    .then(response =>{
-      return response
+    .then(res =>{
+      return res.json()
     })
     .catch(err =>console.log(err))
   }
+  
