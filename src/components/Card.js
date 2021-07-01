@@ -6,22 +6,22 @@ import { faClock,faCalendarAlt,faUser} from '@fortawesome/free-solid-svg-icons'
 
 
 
-const Card = () => {
+const Card = ({title,category,date,participants,image}) => {
     return (
  
   <div className="tt">
             <div className="wrapper">
-            <img className="post_pic" src={caro2} alt="" />
+            <img className="post_pic" src={image} alt="" />
             <p className="post_title_text">
-                Impact of cryptograpy in Environment changes
+               {title}
             </p>
            <span className="post_cat">
-               Technology
+               {category}
            </span>
            <div className="post_mis">
-            <span className="event_date">  <span className="icn"><FontAwesomeIcon icon={faCalendarAlt} /></span> 11.03.2000</span>
-            <span className="event_time"><span className="icn"><FontAwesomeIcon icon={faClock} /></span> 11.30</span>
-            <span className="event_part"><span className="icn"><FontAwesomeIcon icon={faUser} /></span> 75/100</span>
+            <span className="event_date">  <span className="icn"><FontAwesomeIcon icon={faCalendarAlt} /></span> &nbsp;{ date}</span>
+            {/* <span className="event_time"><span className="icn"><FontAwesomeIcon icon={faClock} /></span> {time}</span> */}
+            <span className="event_part"><span className="icn"><FontAwesomeIcon icon={faUser} /></span>&nbsp; { participants}/100</span>
             <button className="post_btn">View Details</button>
            </div>
        </div> 

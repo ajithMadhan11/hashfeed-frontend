@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,18 +10,23 @@ import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
+import Home from '@material-ui/icons/Home';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from '../UserDashboard/listitems';
-// import Chart from './Chart';
-// import Deposits from './Deposits';
-// import Orders from './Orders';
+import { mainListItems } from '../UserDashboard/listitems';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Myevents from './Myevents';
+import Joinedevents from './Joinedevents';
+import UserDetails from './UserDetails';
+import Addevents from './Addevents';
+import {  useHistory } from 'react-router-dom';
+
 
 function Copyright() {
   return (
@@ -44,7 +49,9 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
+  
   },
+
   toolbarIcon: {
     display: 'flex',
     alignItems: 'center',
@@ -75,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    
+  }, 
+    title2: {
+    float:'right'
     
   }, 
   title1: {
@@ -124,7 +135,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function Dashboard() {
+  let history = useHistory();
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
@@ -135,11 +148,28 @@ export default function Dashboard() {
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
-  const toggleComponent=()=>{
-    //
+ const [comp, setcomp] = useState(1);
+
+  const toggleComponent=(val)=>{
+    setcomp(val);
   }
 
+  const renderSwitch=(param) =>{
+    switch(param) {
+      case 1:
+        return <Addevents/>
+      case 2:
+        return <Myevents/>
+      case 3:
+        return <Joinedevents/>  
+      case 4:
+        return <UserDetails/>
+      default:
+        return 'Sorry an Internal error occoured :(';
+    }
+  }
   return (
+   
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
@@ -155,6 +185,14 @@ export default function Dashboard() {
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
+          </Typography>
+           <Typography component="h3" variant="h6" color="inherit" noWrap className={classes.title2}>
+              <IconButton
+              style={{color:'white'}}
+              onClick={()=>(history.push('/'))}
+              >
+                <Home/>
+                </IconButton>Home
           </Typography>
         </Toolbar>
       </AppBar>
@@ -174,21 +212,25 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List>
+          {
+            mainListItems.map((item,key)=>(
+              (<ListItem  button key={item.key} value={item.key} onClick={()=>toggleComponent(item.key)}>
+              <ListItemIcon>
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.title} />
+            </ListItem>)
+            ))
+          }
+          </List>
        
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container >
-           
-          
-              <Paper className={fixedHeightPaper}>
-                render here
-              </Paper>
-            
-        
-           
+             {renderSwitch(comp)}
           </Grid>
           <Box pt={4}>
             <Copyright />

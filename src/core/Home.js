@@ -16,6 +16,10 @@ const Home = () => {
     return (
        <div>
             <Menu/>
+            <div className="sub_head">
+                <p className="sub_head_title">Featured</p>
+                {/* <hr /> */}
+            </div>
             <div className="container">
             <Splide
 				options={ {
@@ -33,23 +37,26 @@ const Home = () => {
 				hasAutoplayProgress
 			>
   <SplideSlide>
-  <Card/>
+  <Card title={"Impact of Cryptography in environment"} category={"Technology"} date={"11.03.2021"} time={"11:30"} participants={"75"} image={caro1}/>
   </SplideSlide>
   <SplideSlide>
-  <Card/>
+  <Card title={"Impact of Cryptography in environment"} category={"Technology"} date={"11.03.2021"} time={"11:30"} participants={"75"} image={caro5}/>
   </SplideSlide>  
   <SplideSlide>
-  <Card/>
+  <Card title={"Impact of Cryptography in environment"} category={"Technology"} date={"11.03.2021"} time={"11:30"} participants={"75"} image={caro4}/>
   </SplideSlide>  
   <SplideSlide>
-  <Card/>
+  <Card title={"Impact of Cryptography in environment"} category={"Technology"} date={"11.03.2021"} time={"11:30"} participants={"75"} image={caro3}/>
   </SplideSlide> 
    <SplideSlide>
-   <Card/>
+   <Card title={"Impact of Cryptography in environment"} category={"Technology"} date={"11.03.2021"} time={"11:30"} participants={"75"} image={caro2}/>
   </SplideSlide> 
 </Splide>
             </div>
-           
+            <div className="sub_head">
+                <p className="sub_head_title">All Events</p>
+       
+            </div>
        </div>
        
     );

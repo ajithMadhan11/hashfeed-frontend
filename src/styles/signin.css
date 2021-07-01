@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* margin-top: 80px; */
     background-color: #ececec ;
  
 }
@@ -13,7 +14,7 @@
     flex-direction: column;
     position: relative;
     margin: 30px;
-    margin-top: 80px;
+    margin-top: 60px !important;
     height: fit-content;
     width: 500px;
     background-color: #ffffff !important;

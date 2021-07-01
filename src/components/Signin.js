@@ -21,7 +21,6 @@ const [state, setstate] = useState({
 });
 
 const user =isAutheticated();
-console.log(user);
 const {email,password,error,isRedirected}=state;
 
     const handleChange = name => e=>{
@@ -67,7 +66,7 @@ const {email,password,error,isRedirected}=state;
                 <input type="password" className="form_input" placeholder="Enter your Password" value={password} onChange={handleChange("password")} required/>
                 <p className="f_pass">Forget password?</p>
                 <button className="signin_btn" onClick={submitForm}>SignIn</button>
-                <hr />
+                <hr/>
                 <p className="f_last_mis">Already have a account? <span><Link style={{ textDecoration: 'none',backgroundColor:"#ffffff",color:"#4A89DC" }}  to='/signup'>Signup</Link></span></p>
              </div>
             </div>
