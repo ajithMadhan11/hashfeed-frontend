@@ -44,7 +44,8 @@ const {email,password,error,isRedirected}=state;
                 authenticate(data ,()=>{
                     setstate({...state,isRedirected:true})
                 })
-                dispatch(login({data}))
+               
+                dispatch(login(data))
                 
                 const m_name=data.name;
                 notification('success',m_name);

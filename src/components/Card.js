@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/card.css'
 import caro2 from '../images/caro2.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock,faCalendarAlt,faUser} from '@fortawesome/free-solid-svg-icons'
+import { faClock,faCalendarAlt,faUser,faTags} from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -15,8 +15,8 @@ const Card = ({title,category,date,participants,image}) => {
             <p className="post_title_text">
                {title}
             </p>
-           <span className="post_cat">
-               {category}
+           <span className="post_cat2">
+              <strong><FontAwesomeIcon icon={faTags} /> {category}</strong>
            </span>
            <div className="post_mis">
             <span className="event_date">  <span className="icn"><FontAwesomeIcon icon={faCalendarAlt} /></span> &nbsp;{ date}</span>

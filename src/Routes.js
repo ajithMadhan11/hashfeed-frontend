@@ -6,6 +6,7 @@ import ServerError from './components/ServerError';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Dashboard from './components/UserDashboard/Dashboard';
+import Myevents from './components/UserDashboard/Myevents';
 import Home from './core/Home';
 
 const Routes = () => {
@@ -17,6 +18,7 @@ const Routes = () => {
             <Route path='/signup' exact component={Signup}/>
             <Route path='/servererr' exact component={ServerError}/>
             <PrivateRoutes path='/user/dashboard' exact component={Dashboard}/>
+            <PrivateRoutes path='/user/dashboard/myevents' exact component={Myevents}/>
             
            
 

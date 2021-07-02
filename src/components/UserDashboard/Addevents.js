@@ -10,12 +10,15 @@ import ReactHtmlParser from 'react-html-parser';
 import {isAutheticated} from '../../auth/authhelpercalls'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-
-const user=isAutheticated();
-const {id,token}= user;
+import { useSelector } from 'react-redux';
+import { selectUsers } from '../../redux/userSlice';
+// const user=isAutheticated();
+// const {id,token}= user;
 
 const Addevents = () => {
-    
+    const user=useSelector(selectUsers);
+    const {id,token} =user;
+    console.log(id,token);
 const [state, setstate] = useState({
     title:'Title',
     image:deaultPic,

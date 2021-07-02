@@ -1,10 +1,15 @@
 import {API} from '../../backend'
 import defaultPic from '../../images/default.jpg'
+import axios from 'axios'
+
+
+
 export const getCategories = () => {
     return fetch(`${API}/categories`, {
       method: "GET"
     })
       .then(response => {
+       
         return response.json();
       })
       .catch(err => console.log(err));
@@ -44,13 +49,13 @@ export const getCategories = () => {
   return photo;
   }
 
-  export const  getuniqueCategory =(id)=>{
-    return  fetch(`${API}/category/${id}`,{
+
+  export const getuniqueCategory = (id)=>{
+    return fetch(`${API}/category/${id}`,{
       method:'GET'
     })
-    .then(res =>{
-      return res.json()
+    .then((response)=>{
+      return response
     })
-    .catch(err =>console.log(err))
+    .catch((err)=>console.log(err))
   }
-  

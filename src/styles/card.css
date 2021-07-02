@@ -28,13 +28,13 @@
     font-size: 1.1em;
     font-weight: 650;
   }
-  .post_cat{
-    background-color: #60C5FE;
-    margin-left: 20px !important;
-    color: #ffffff;
-    padding:5px 9px 5px 9px;
+  .post_cat2{
+   
+    margin-left: 30px !important;
+    color: #025686 !important;
+font-weight: 900;
     border-radius: 50px;
-    font-size: 0.7em;
+    font-size: 0.9em;
 
   }
 
@@ -105,17 +105,17 @@
       font-size: 0.9em;
       font-weight: 650;
     }
-    .post_cat{
-      background-color: #60C5FE;
+    /* .post_cat{
+     
       margin-left: 20px;
       margin-bottom: 20px;
-      color: #ffffff;
+      color: #60C5FE;
       padding:4px 8px 4px 8px;
       border-radius: 50px;
-      font-size: 0.6em;
+      font-size: 0.em;
       font-weight: 700;
   
-    }
+    } */
   
     .post_mis{
       margin-left: 20px;

@@ -18,7 +18,12 @@ const Home = () => {
             <Menu/>
             <div className="sub_head">
                 <p className="sub_head_title">Featured</p>
-                {/* <hr /> */}
+                <hr style={{
+                    width: '1100px',
+                    border: 'none',
+                    height: '5px',
+                    background: '#c9c6c6'
+                }}/>
             </div>
             <div className="container">
             <Splide
@@ -55,7 +60,12 @@ const Home = () => {
             </div>
             <div className="sub_head">
                 <p className="sub_head_title">All Events</p>
-       
+                <hr style={{
+                    width: '1100px',
+                    border: 'none',
+                    height: '5px',
+                    background: '#c9c6c6'
+                }}/>
             </div>
        </div>
        

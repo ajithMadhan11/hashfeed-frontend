@@ -33,7 +33,6 @@ const Menu = ({history}) => {
     }
 }
   const user =useSelector(selectUsers);
-  console.log(user);
   const dispatch=useDispatch();
     return (
         <div className="nav nav-row">

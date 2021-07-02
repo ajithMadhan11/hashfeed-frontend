@@ -17,6 +17,7 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import Home from '@material-ui/icons/Home';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { mainListItems } from '../UserDashboard/listitems';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -26,6 +27,12 @@ import Joinedevents from './Joinedevents';
 import UserDetails from './UserDetails';
 import Addevents from './Addevents';
 import {  useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUsers } from '../../redux/userSlice';
+import { signout } from '../../auth/authhelpercalls';
+
+
+
 
 
 function Copyright() {
@@ -137,6 +144,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Dashboard() {
+  const user =useSelector(selectUsers);
+  const dispatch=useDispatch();
   let history = useHistory();
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -192,7 +201,19 @@ export default function Dashboard() {
               onClick={()=>(history.push('/'))}
               >
                 <Home/>
-                </IconButton>Home
+                </IconButton>
+                 <IconButton
+              style={{color:'white'}}
+              onClick={()=>{
+                signout(()=>{
+                  dispatch(logout())
+                  history.push('/')
+                  window.location.reload();
+                })
+              }}
+              >
+                <ExitToAppIcon/>
+                </IconButton>
           </Typography>
         </Toolbar>
       </AppBar>
