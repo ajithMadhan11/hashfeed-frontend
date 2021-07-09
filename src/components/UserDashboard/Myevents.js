@@ -36,6 +36,7 @@ const Myevents = () => {
   const {id,token} =user;
   // console.log(user);
   const [UserPosts, setUserPosts] = useState('')
+ 
 
    useEffect(() => {
     getAllPost()
@@ -43,8 +44,7 @@ const Myevents = () => {
   
 
   const getAllPost = ()=>{
-   
-    console.log(id,token);
+
      getuserPosts(id,token).then((data)=>{
       if(data.error){
         console.log("ERROR FETCHING POSTS");
@@ -66,17 +66,22 @@ const Myevents = () => {
       <Container maxWidth="lg" className={classes.container}>
           {UserPosts &&
             UserPosts.map((post)=>{
-              // let categoryName
+              
               const participantsCount=post.participants.length
               let dateObj = new Date(post.date);
               let reqdate=dateObj.toDateString();
               const postphoto = getPostPhoto(post._id)
+              const pstCategory="tech"
+                //----------------------------------------------------->TODO
               // getuniqueCategory(post.category).then((data)=>{
-              //    categoryName=data;
+              //   if(data.error) console.log("Error fetching data");
+              //   else console.log(data);
+              //   // else cat=data
               // })
-              // category={categoryName.name}
+             //----------------------------------------------------->TODO
               
-              return <Card key={post._id} title={post.title}  date={reqdate} 
+
+              return <Card key={post._id} title={post.title} category={'category'} date={reqdate} 
                participants={participantsCount} image={postphoto} />
 
             })

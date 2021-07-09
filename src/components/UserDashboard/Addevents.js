@@ -18,7 +18,7 @@ import { selectUsers } from '../../redux/userSlice';
 const Addevents = () => {
     const user=useSelector(selectUsers);
     const {id,token} =user;
-    console.log(id,token);
+  
 const [state, setstate] = useState({
     title:'Title',
     image:deaultPic,

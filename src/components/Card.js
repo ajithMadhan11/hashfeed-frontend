@@ -3,6 +3,7 @@ import '../styles/card.css'
 import caro2 from '../images/caro2.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock,faCalendarAlt,faUser,faTags} from '@fortawesome/free-solid-svg-icons'
+import EventPage from './EventPage';
 
 
 
@@ -22,7 +23,7 @@ const Card = ({title,category,date,participants,image}) => {
             <span className="event_date">  <span className="icn"><FontAwesomeIcon icon={faCalendarAlt} /></span> &nbsp;{ date}</span>
             {/* <span className="event_time"><span className="icn"><FontAwesomeIcon icon={faClock} /></span> {time}</span> */}
             <span className="event_part"><span className="icn"><FontAwesomeIcon icon={faUser} /></span>&nbsp; { participants}/100</span>
-            <button className="post_btn">View Details</button>
+            <button className="post_btn" onClick={<EventPage/>}>View Details</button>
            </div>
        </div> 
   </div>
