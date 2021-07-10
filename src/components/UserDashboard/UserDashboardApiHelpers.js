@@ -55,3 +55,8 @@ export const getCategories = () => {
     })
    
   }
+
+  export const getPostById=(id)=>{
+    return fetch(`${API}/post/${id}`)
+    .then((response)=>response.json())
+  }

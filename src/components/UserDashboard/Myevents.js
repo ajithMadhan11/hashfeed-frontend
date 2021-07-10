@@ -8,13 +8,11 @@ import { getPostPhoto, getuserPosts ,getuniqueCategory } from './UserDashboardAp
 import { isAutheticated } from '../../auth/authhelpercalls';
 import { useSelector } from 'react-redux';
 import { selectUsers } from '../../redux/userSlice';
-import { Suspense } from 'react';
 import Loader from '../Loader';
-import { logRoles } from '@testing-library/react';
 
 
-// const user= isAutheticated();
-// const {id,token} =user;
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,6 +34,7 @@ const Myevents = () => {
   const {id,token} =user;
   // console.log(user);
   const [UserPosts, setUserPosts] = useState('')
+  const [loading, setloading] = useState(true);
  
 
    useEffect(() => {
@@ -50,23 +49,29 @@ const Myevents = () => {
         console.log("ERROR FETCHING POSTS");
       }else{
         setUserPosts(data)
+        setloading(!loading)
+
       }
     })
     .catch(()=>{
       console.log("CATCH FROM POST FETCHING");
     })
   }
+  const loadComponent =()=>{
+    return  loading && <Loader/>
+  }
+
     const classes = useStyles();
     return (
         <div>
             <div className="sub_head">
                 <p className="sub_head_title">Created Events</p>
             </div>
-      <Suspense fallback={<Loader/>}>
+           
+        {loadComponent()}
       <Container maxWidth="lg" className={classes.container}>
           {UserPosts &&
             UserPosts.map((post)=>{
-              
               const participantsCount=post.participants.length
               let dateObj = new Date(post.date);
               let reqdate=dateObj.toDateString();
@@ -82,12 +87,14 @@ const Myevents = () => {
               
 
               return <Card key={post._id} title={post.title} category={'category'} date={reqdate} 
-               participants={participantsCount} image={postphoto} />
+               participants={participantsCount} image={postphoto} post_id={post._id}/>
 
             })
           }
+      
         </Container>
-      </Suspense>
+    
+     
         </div>
     );
 }

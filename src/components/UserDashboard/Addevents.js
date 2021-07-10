@@ -28,10 +28,11 @@ const [state, setstate] = useState({
     temp_url:"",
     createdProduct:'',
     formData:new FormData(),
-    error:''
+    error:'',
+    link:''
 });
 const [description, setdescription] = useState('Description');
-const{title,date,category,allcategories,image,temp_url,formData,createdProduct,error}=state;
+const{title,date,category,allcategories,image,temp_url,formData,createdProduct,error,link}=state;
 
 
 const preload=()=>{
@@ -81,7 +82,8 @@ useEffect(() => {
                     image:deaultPic,
                     date:'2000-03-11',
                     category:'',
-                    temp_url:''
+                    temp_url:'',
+                    link:''
                 })
                 setdescription( 'Description' );
                 notification('success','Event is created Successfully')
@@ -126,6 +128,9 @@ useEffect(() => {
             </select>
             <p className="form_label">Event date</p>
             <input type="date" className="form_input" placeholder="Enter Event Title"  value={date} onChange={handleChange('date')} required/>
+            <p className="form_label">Joining Link</p>
+            <input type="text" className="form_input" placeholder="Enter Joining link"  value={link} onChange={handleChange('link')} />
+            <p className="link_helper">This can also added later from your dashboard.*</p>
            
             <button className="signin_btn" onClick={submitForm} >Add event</button>
            
