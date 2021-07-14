@@ -25,7 +25,7 @@ const Home = () => {
                     background: '#c9c6c6'
                 }}/>
             </div>
-            <div className="container">
+            <div className="container_for_home_splide">
             <Splide
 				options={ {
 					type         : 'loop',

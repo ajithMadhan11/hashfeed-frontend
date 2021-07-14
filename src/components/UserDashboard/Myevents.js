@@ -9,6 +9,7 @@ import { isAutheticated } from '../../auth/authhelpercalls';
 import { useSelector } from 'react-redux';
 import { selectUsers } from '../../redux/userSlice';
 import Loader from '../Loader';
+import MiniCards from '../MiniCards';
 
 
 
@@ -68,7 +69,7 @@ const Myevents = () => {
                 <p className="sub_head_title">Created Events</p>
             </div>
            
-        {loadComponent()}
+        {/* {loadComponent()} */}
       <Container maxWidth="lg" className={classes.container}>
           {UserPosts &&
             UserPosts.map((post)=>{
@@ -86,7 +87,7 @@ const Myevents = () => {
              //----------------------------------------------------->TODO
               
 
-              return <Card key={post._id} title={post.title} category={'category'} date={reqdate} 
+              return <MiniCards key={post._id} title={post.title} category={'category'} date={reqdate} 
                participants={participantsCount} image={postphoto} post_id={post._id}/>
 
             })
