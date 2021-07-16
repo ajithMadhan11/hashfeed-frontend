@@ -10,16 +10,23 @@
    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
+
 .miniCards_title{
     font-size: 20px;
     font-weight: 800;
     margin: 15px;
+    margin-top: 15px !important;
+    padding-top: 15px;
+
 }
 .mini_sec_cont{
     display: flex;
     margin: 15px;
     margin-bottom: 0px;
  
+}
+.btn_cont{
+    margin-top: 10px;
 }
 .mini_event_data{
     margin-right: 40px;
@@ -67,9 +74,19 @@
     color: #ffffff;
     background-color: #34aff7;
     border-radius: 50px;
-    width: 270px;
+    width: 200px;
 }
+.delpost_btn_minievent{
+    border: none;
+    color: #ffffff;
+    background-color: #D82E2F;
+    width: 50px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 50px;
 
+
+
+}
 @media (max-width:600px) {
 /* code fo rresponsive TODo */
 }

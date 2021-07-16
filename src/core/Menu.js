@@ -3,7 +3,7 @@ import '../styles/menu.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { withRouter ,Link} from 'react-router-dom';
+import { withRouter ,Link, useHistory} from 'react-router-dom';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { isAutheticated ,signout } from '../auth/authhelpercalls';
@@ -23,7 +23,7 @@ const currenttab=(history,path)=>{
 }
 
 const Menu = ({history}) => {
-
+  // const lhistory = useHistory()
   const notification=(mode,field)=>{
     if(mode == 'error'){
         return  NotificationManager.error(field);
@@ -51,6 +51,7 @@ const Menu = ({history}) => {
            ()=>{
              signout(()=>{
                dispatch(logout())
+              //  lhistory.push('/')
                notification('success',"See you soon!")
              })
            }

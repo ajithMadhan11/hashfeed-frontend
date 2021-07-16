@@ -75,10 +75,14 @@ color: #60C5FE;
     border: none;
     font-size: 30px;
     border-radius: 5px;
+    cursor: pointer;
+}
+.join_btn:hover{
+
+    background-color: #4e9b41;
 }
 @media (max-width:600px) {
     .conatiner_n2{
-    
         padding: 5px;
         background-color: #ececec;
     }

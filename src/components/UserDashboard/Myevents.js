@@ -69,26 +69,15 @@ const Myevents = () => {
                 <p className="sub_head_title">Created Events</p>
             </div>
            
-        {/* {loadComponent()} */}
+        {loadComponent()}
       <Container maxWidth="lg" className={classes.container}>
           {UserPosts &&
             UserPosts.map((post)=>{
               const participantsCount=post.participants.length
               let dateObj = new Date(post.date);
               let reqdate=dateObj.toDateString();
-              const postphoto = getPostPhoto(post._id)
-              const pstCategory="tech"
-                //----------------------------------------------------->TODO
-              // getuniqueCategory(post.category).then((data)=>{
-              //   if(data.error) console.log("Error fetching data");
-              //   else console.log(data);
-              //   // else cat=data
-              // })
-             //----------------------------------------------------->TODO
-              
-
-              return <MiniCards key={post._id} title={post.title} category={'category'} date={reqdate} 
-               participants={participantsCount} image={postphoto} post_id={post._id}/>
+              return <MiniCards key={post._id} p_title={post.title} p_date={reqdate} 
+               p_participants={participantsCount}  p_post_id={post._id} p_link={post.link}/>
 
             })
           }
