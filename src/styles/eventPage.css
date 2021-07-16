@@ -1,37 +1,43 @@
-
-.event_photo{
+.event_photo {
     width: 1280px;
     height: 70vh;
     object-fit: cover;
 }
-.container_all{
+
+.container_all {
     /* margin: 10px !important; */
     background-color: #ffffff;
-    
+
 }
-.conatiner_n2{
-    
+
+.conatiner_n2 {
+
     padding: 20px;
     background-color: #ececec;
 }
-.conatiner_n3{
+
+.conatiner_n3 {
     padding: 15px;
     background-color: #ffffff;
 }
-.post_title{
+
+.post_title {
     margin-top: 15px;
     font-size: 25px;
 }
-.post_r_2{
+
+.post_r_2 {
     display: flex;
 
 }
-.post_r_3{
+
+.post_r_3 {
     display: flex;
     margin-top: 20px;
 
 }
-.post_category{
+
+.post_category {
     margin-top: 15px;
     background-color: #60C5FE;
     padding: 5px 15px 5px 15px;
@@ -39,7 +45,8 @@
     border-radius: 25px;
     margin-right: 0px !important;
 }
-.post_share{
+
+.post_share {
     margin-top: 15px;
     background-color: #60C5FE;
     padding: 5px 15px 5px 15px;
@@ -47,25 +54,31 @@
     border-radius: 25px;
     margin-left: 40px;
 }
-.post_share:hover{
+
+.post_share:hover {
     background-color: #1f9ee7;
     cursor: pointer;
 }
-.post_date{
-color: #60C5FE;
+
+.post_date {
+    color: #60C5FE;
 }
-.post_participants{
+
+.post_participants {
     color: #60C5FE;
     margin-left: 40px;
 }
-.date_txt{
+
+.date_txt {
     color: #000000;
 }
-.part_txt{
+
+.part_txt {
     color: #000000;
 
 }
-.join_btn{
+
+.join_btn {
     position: absolute;
     top: 610px;
     left: 1000px;
@@ -77,24 +90,28 @@ color: #60C5FE;
     border-radius: 5px;
     cursor: pointer;
 }
-.join_btn:hover{
+
+.join_btn:hover {
 
     background-color: #4e9b41;
 }
+
 @media (max-width:600px) {
-    .conatiner_n2{
+    .conatiner_n2 {
         padding: 5px;
         background-color: #ececec;
     }
-    .event_photo{
+
+    .event_photo {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .join_btn{
+
+    .join_btn {
         position: relative;
-       left: 0px;
-       top: 15px;
+        left: 0px;
+        top: 15px;
         background-color: #8FD184;
         color: #ffffff;
         padding: 5px 25px 5px 25px;
@@ -104,7 +121,8 @@ color: #60C5FE;
         font-size: 30px;
         border-radius: 5px;
     }
-    .post_category{
+
+    .post_category {
         margin-top: 15px;
         font-size: 15px;
         background-color: #60C5FE;
@@ -112,7 +130,8 @@ color: #60C5FE;
         color: #ffffff;
         border-radius: 25px;
     }
-    .post_share{
+
+    .post_share {
         margin-top: 15px;
         background-color: #60C5FE;
         padding: 5px 15px 5px 15px;

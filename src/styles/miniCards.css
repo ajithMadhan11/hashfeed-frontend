@@ -83,9 +83,12 @@
     width: 50px;
     padding: 5px 15px 5px 15px;
     border-radius: 50px;
-
-
-
+}
+.delpost_btn_minievent:hover{
+cursor: pointer;
+}
+.edpost_btn_minievent:hover{
+    cursor: pointer;
 }
 @media (max-width:600px) {
 /* code fo rresponsive TODo */

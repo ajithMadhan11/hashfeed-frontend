@@ -79,10 +79,10 @@ const {email,password,error,isRedirected}=state;
    
     const notification=(mode,field)=>{
         if(mode == 'error'){
-            return  NotificationManager.error(field);
+            return  NotificationManager.error(field,'',500);
         }
         else if(mode== 'success'){
-            return  NotificationManager.success('welcome back '+field+' 🙌');
+            return  NotificationManager.success('welcome back '+field+' 🙌','',500);
         }
     }
 
