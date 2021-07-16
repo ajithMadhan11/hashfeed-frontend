@@ -2,10 +2,7 @@ import React, { useEffect , useState } from 'react';
 import '../../styles/myEvents.css'
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '../Card';
-import caro1 from '../../images/caro1.jpg'
-import { getPostPhoto, getuserPosts ,getuniqueCategory } from './UserDashboardApiHelpers';
-import { isAutheticated } from '../../auth/authhelpercalls';
+import {  getuserPosts  } from './UserDashboardApiHelpers';
 import { useSelector } from 'react-redux';
 import { selectUsers } from '../../redux/userSlice';
 import Loader from '../Loader';
@@ -58,6 +55,7 @@ const Myevents = () => {
       console.log("CATCH FROM POST FETCHING");
     })
   }
+  
   const loadComponent =()=>{
     return  loading && <Loader/>
   }

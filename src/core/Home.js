@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Menu from './Menu';
 import '../styles/home.css'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -10,9 +10,24 @@ import caro3 from '../images/caro3.jpg'
 import caro4 from '../images/caro4.jpg'
 import caro5 from '../images/caro5.jpg'
 import Card from '../components/Card';
+import { getAllEvent } from './corehelpercalls';
 
 const Home = () => {
+    const [allevents, setallevents] = useState('');
+    useEffect(() => {
+        preload();
+
+    }, []);
     
+    const preload =()=>{
+        getAllEvent().then((data)=>{
+            if(data.error){
+                console.log("Error fetching posts");
+            }else{
+                setallevents(data)
+            }
+        })
+    }
     return (
        <div>
             <Menu/>
@@ -67,6 +82,15 @@ const Home = () => {
                     background: '#c9c6c6'
                 }}/>
             </div>
+            <div className="container_for_home_splide">
+                {
+                    // allevents && allevents.map((event)=>{
+                    //   return ( <Card key={event._id} title={event.title} category={event.category} date={event.date}  participants={event.participants} image={caro2}/>)
+
+                    // })
+                   
+                }
+       </div>
        </div>
        
     );
