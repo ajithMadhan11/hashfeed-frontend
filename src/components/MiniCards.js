@@ -79,13 +79,15 @@ const MiniCards = ({ p_title, p_date, p_participants, p_post_id, p_link }) => {
     ) {
       return;
     }
-    participantsofEvent(id, token, post_id).then((data) => {
-      if (data.error) {
-        console.log("Error fetching participants");
-      } else {
-        setparticipants(data);
-      }
-    });
+    if(post_id){
+      participantsofEvent(id, token, post_id).then((data) => {
+        if (data.error) {
+          console.log("Error fetching participants");
+        } else {
+          setparticipants(data);
+        }
+      });
+    }
     setsidebar(open);
   };
 
@@ -184,10 +186,6 @@ const MiniCards = ({ p_title, p_date, p_participants, p_post_id, p_link }) => {
           {participants &&
             participants.map((part, index) => (
               <ListItem key={index}>
-                {/* <ListItemIcon>
-                  <PersonIcon />
-                </ListItemIcon> */}
-                <Divider/>
                 <ListItemText primary={part.email} />
               </ListItem>
             ))}

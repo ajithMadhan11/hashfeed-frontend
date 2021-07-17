@@ -8,10 +8,6 @@ import { selectUsers } from '../../redux/userSlice';
 import Loader from '../Loader';
 import MiniCards from '../MiniCards';
 
-
-
-
-
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -25,12 +21,9 @@ const useStyles = makeStyles((theme) => ({
     
   }));
 
-
-
 const Myevents = () => {
   const user=useSelector(selectUsers);
   const {id,token} =user;
-  // console.log(user);
   const [UserPosts, setUserPosts] = useState('')
   const [loading, setloading] = useState(true);
  

@@ -8,7 +8,7 @@
   }
   .wrapper{
      margin: 15px;
-     width: 420px;
+     width: 400px;
     height: 360px;
     background-color: #ffffff;
     /* border-radius: 50px; */
@@ -145,16 +145,16 @@ font-weight: 900;
       font-size: 0.8em;
     }
     .post_btn{
-      position: absolute;
-      top: 300px;
+      position: relative;
+      /* top: 100px; */
       background-color: #2ECC71;
       color: #ffffff;
       border: 0;
       padding: 10px;
       font-weight: 800;
       border-radius: 50px;
-      margin: 9px 10px 9px 10px;
-      width: 270px;
+      /* margin: 9px 10px 9px 10px; */
+      width: 170px;
     }
     .post_btn:hover{
       cursor: pointer;

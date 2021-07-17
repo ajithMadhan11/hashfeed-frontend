@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&display=swap');
-
+/* *{
+    background-color: #EDF1F5;
+} */
 .container_for_home_splide{
     margin: 30px;
    /* background-color: #ececec; */
@@ -19,10 +21,7 @@ display: flex;
     font-size: 40px;
     color: #c9c6c6;
 }
-/* hr{
-    width: 1100px !important;
-            border: none;
-            height: 5px;
-            background: #c9c6c6;
-
-} */
+.sec_Container{
+    display: flex;
+    flex-wrap: wrap;
+}
